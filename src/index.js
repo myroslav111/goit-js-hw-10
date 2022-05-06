@@ -10,11 +10,6 @@ import hbsTemplateList from './tmplates/list-countries.hbs'
 const DEBOUNCE_DELAY = 300;
 const refs = getRefs()
 
-// сщообщение о неудачи
-function err() {
-    Notify.failure('Oops, there is no country with that name');
-}
-
 // сщообщение информация
 function info() {
     Notify.info("Too many matches found. Please enter a more specific name.");
@@ -53,10 +48,6 @@ function renderCountryList(countrys) {
 
 // фун. рисуем интерфейс div
 function renderCountryCard(country){
-    if(country.status === 404){
-        err()
-        return 
-    }
         cleanDomList()  
         const markupItem = hbsTemplateItem(country)
         refs.div.innerHTML = markupItem
