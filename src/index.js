@@ -15,6 +15,10 @@ function info() {
     Notify.info("Too many matches found. Please enter a more specific name.");
 }
 
+function err() {
+    Notify.failure('Oops, there is no country with that name');
+}
+
 // подписываем инпут
 refs.input.addEventListener('input', debounce(onInputIn, DEBOUNCE_DELAY))
 
@@ -29,7 +33,12 @@ function onInputIn(event) {
 
     fetchCountries(nameCountries)
     .then(renderCountryList)
-    .catch(info)
+    .catch(error => {
+        if(Number(error.message) === 404){
+            return err()
+        }
+        return info()
+    })
 } 
 
 // фун. рисуем интерфейс list
