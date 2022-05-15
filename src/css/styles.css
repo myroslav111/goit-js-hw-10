@@ -10,7 +10,9 @@ body {
   /* background-color: #fafafa; */
   color: #212121;
   line-height: 1.5;
-
+  
+padding-right: 30px;
+padding: 10px;
 opacity: 0.8;
 background-image: radial-gradient(gray 1.05px, #fafafa 1.05px);
 background-size: 25px 25px;
@@ -60,3 +62,172 @@ li{
   font-size: 60px;
 }
 
+
+
+/*               */
+
+
+.container{
+  position: relative;
+
+}
+
+*, *:after, *:before {
+  padding:0;
+  margin:0;
+  font-family:Arial;
+}
+
+#gallery{
+  position: absolute;
+  top: 234px;
+  left: 300px;
+}
+
+.ul {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  list-style:none;
+  width:955px;
+  height:450px;
+  border-radius:3px;
+  overflow:hidden;
+  box-shadow:1px 1px 3px 1px;
+}
+
+
+.li {
+  position:relative;
+  width:190px;
+  height:450px;
+  float:left;
+  border-left:1px solid white;
+  -webkit-transition:all 0.7s;
+  -moz-transition:all 0.7s;
+  transition:all 0.7s;
+  box-shadow:-2px 0 10px 2px;
+}
+
+ul li:first-child {
+  border:none;
+}
+
+span {
+  display:block;
+  position:absolute;
+  bottom:0;
+  width:50%;
+  color:white;
+  white-space:nowrap;
+  padding:20px;
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+
+}
+
+img {
+  width:800px;
+  height:450px;
+}
+
+ul:hover li {
+  width:50px;  
+}
+
+
+ul li:hover {
+  width:750px;
+}
+
+
+
+/**/
+/* body {
+  height:100vh;
+  width:100vw;
+  background-color:rgb(19, 20, 22);
+  overflow:hidden;
+  font-family: Lato, "Trebuchet MS", "Verdana", "sans-serif";
+} */
+
+#testbutton {
+  width: 150px;
+  height:50px;
+  border-radius:180px;
+  position:relative;
+  margin-top: 40px;
+  /* left:calc(50% - 75px); */
+  top:calc(50% - 25px);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  cursor:pointer;
+  line-height:12px;
+}
+
+#testbutton:before {
+  content:'';
+  z-index:1;
+  position:absolute;
+  display:block;
+  width:80%;
+  height:70%;
+  top:15%;
+  left:10%;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(15px);
+  opacity:0;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+#testbutton:hover:before {
+  opacity:1;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(25px);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);  
+}
+
+#testbutton:after {
+  content:'CLICK ME!';
+  text-align:center;
+  line-height:40px;
+  font-size:18px;
+  color:rgba(235,235,235,1);
+  font-weight:bold;
+  z-index:5;
+  position:absolute;
+  display:block;
+  border-radius:180px;
+  width:92%;
+  height:80%;
+  top:10%;
+  left:4%;  
+  background-color:rgb(19, 20, 22);
+}
+
+/**/
+ body {
+ 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+ 	background-size: 400% 400%;
+ 	animation: gradient 15s ease infinite;
+ 	height: 100vh;
+ }
+  
+ @keyframes gradient {
+ 	0% {
+ 		background-position: 0% 50%;
+ 	}
+ 	50% {
+ 		background-position: 100% 50%;
+ 	}
+ 	100% {
+ 		background-position: 0% 50%;
+ 	}
+ }

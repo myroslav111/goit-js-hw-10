@@ -1,9 +1,10 @@
 import './css/styles.css';
-import { fetchCountries } from './fetchCountries';
+import { fetchCountries, getPhoto } from './fetchCountries';
 import  {  Notify  }  from  'notiflix/build/notiflix-notify-aio' ; 
 import debounce from 'lodash.debounce'
 import getRefs from './get-refs'
 import hbsTemplateItem from './tmplates/item-countries.hbs'
+import hbsGallery from './tmplates/gallery.hbs'
 import hbsTemplateList from './tmplates/list-countries.hbs'
 
 
@@ -60,6 +61,26 @@ function renderCountryCard(country){
         cleanDomList()  
         const markupItem = hbsTemplateItem(country)
         refs.div.innerHTML = markupItem
+       
+        document.querySelector('#testbutton').addEventListener('click', onBtnClick)
+        onBtnClick()
+
+}
+
+// фун. создания галереи
+async function renderCountryGallery(){
+    let country = refs.input.value
+    try {
+        const result = await getPhoto(country)
+        const markupGallery = hbsGallery(result.data.hits)
+        refs.gallery.innerHTML = markupGallery
+    } catch (error) {console.error(error);}
+
+}
+
+// document.querySelector('#testbutton').addEventListener('click', onBtnClick)
+function onBtnClick(event){
+    renderCountryGallery()
 }
 
 // фун. очистки дома list
@@ -71,6 +92,7 @@ function cleanDomList(){
 function cleanDomItem(){
     refs.div.innerHTML = ''
 }
+
 
 
 

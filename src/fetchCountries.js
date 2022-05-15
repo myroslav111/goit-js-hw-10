@@ -1,3 +1,4 @@
+import axios from "axios"
 const API_REST__COUNTRIES = 'https://restcountries.com/v2/'
 const NAME = 'name/'
 const all = 'all'
@@ -20,5 +21,21 @@ function fetchCountries(name) {
     })
 }
 
+
+const page = (max, min) => Math.floor(Math.random()*(max-min+1)+min);
+
+async function getPhoto(name) {
+    
+    
+      const response = await axios.get(`https://pixabay.com/api/?key=23788919-1e868a4f1ae72234cc449d190&q=${name}&image_type=photo&category=places&page=${page(10, 1)}&per_page=5&orientation=horizontal&orientation=true&min_width=800&min_height=450`);
+      
+    return response
+  }
+
+
+
+
 // именованный экспорт
-export {fetchCountries}
+export {fetchCountries, getPhoto}
+
+
