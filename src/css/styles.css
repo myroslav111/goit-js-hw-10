@@ -78,6 +78,12 @@ li{
   font-family:Arial;
 }
 
+@media screen and (max-width: 1100px) {
+  #gallery{
+      display: none;
+    }
+}
+
 #gallery{
   position: absolute;
   top: 234px;
