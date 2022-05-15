@@ -6,7 +6,9 @@ import getRefs from './get-refs'
 import hbsTemplateItem from './tmplates/item-countries.hbs'
 import hbsGallery from './tmplates/gallery.hbs'
 import hbsTemplateList from './tmplates/list-countries.hbs'
-
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const DEBOUNCE_DELAY = 300;
 const refs = getRefs()

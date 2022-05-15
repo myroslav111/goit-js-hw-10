@@ -89,7 +89,7 @@ li{
 
 #gallery{
   position: absolute;
-  top: 234px;
+  top: 356px;
   left: 300px;
 }
 
@@ -101,8 +101,8 @@ li{
   right:0;
   margin:auto;
   list-style:none;
-  width:955px;
-  height:450px;
+  width: 1116px;
+  height:650px;
   border-radius:3px;
   overflow:hidden;
   box-shadow:1px 1px 3px 1px;
@@ -112,7 +112,7 @@ li{
 .li {
   position:relative;
   width:190px;
-  height:450px;
+  height:650px;
   float:left;
   border-left:1px solid white;
   -webkit-transition:all 0.7s;
@@ -144,8 +144,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 }
 
 img {
-  width:800px;
-  height:450px;
+  width:914px;
+  height:650px;
 }
 
 ul:hover li {
@@ -240,3 +240,13 @@ ul li:hover {
  		background-position: 0% 50%;
  	}
  }
+
+
+ .blur-up {
+  filter: blur(5px);
+  transition: filter 400ms;
+}
+
+.blur-up.lazyloaded {
+  filter: blur(0);
+}
