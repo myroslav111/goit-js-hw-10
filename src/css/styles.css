@@ -82,6 +82,9 @@ li{
   #gallery{
       display: none;
     }
+  #testbutton{
+    display: none;
+  }  
 }
 
 #gallery{
