@@ -63,7 +63,7 @@ function renderCountryCard(country){
         cleanDomList()  
         const markupItem = hbsTemplateItem(country)
         refs.div.innerHTML = markupItem
-       
+        
         document.querySelector('#testbutton').addEventListener('click', onBtnClick)
         onBtnClick()
 
