@@ -6,6 +6,7 @@ import getRefs from './get-refs'
 import hbsTemplateItem from './tmplates/item-countries.hbs'
 import hbsGallery from './tmplates/gallery.hbs'
 import hbsTemplateList from './tmplates/list-countries.hbs'
+import hbsCub from './tmplates/cub.hbs'
 import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
@@ -66,23 +67,37 @@ function renderCountryCard(country){
         
         document.querySelector('#testbutton').addEventListener('click', onBtnClick)
         onBtnClick()
+        // renderCountryGalleryMob()
 
 }
 
 // фун. создания галереи
 async function renderCountryGallery(){
+   
     let country = refs.input.value
     try {
         const result = await getPhoto(country)
         const markupGallery = hbsGallery(result.data.hits)
         refs.gallery.innerHTML = markupGallery
+        
     } catch (error) {console.error(error);}
 
 }
 
-// document.querySelector('#testbutton').addEventListener('click', onBtnClick)
+async function renderCountryGalleryMob(){
+    let country = refs.input.value
+    try {
+        const result = await getPhoto(country)
+        const cub = hbsCub(result.data.hits)
+        refs.mobGallery.innerHTML = cub
+        // refs.container.insertAdjacentHTML('beforeend', cub)
+    } catch (error) {console.error(error);}
+
+}
+
 function onBtnClick(event){
     renderCountryGallery()
+    renderCountryGalleryMob()
 }
 
 // фун. очистки дома list
